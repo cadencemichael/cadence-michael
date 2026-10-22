@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cadence Michael | ECE & CS @ Duke</title>
+<meta name="description" content="Cadence Michael: Duke ECE & CS student, classical pianist and music producer exploring where music, engineering, and computing meet.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4ef;--card:#fff;--ink:#2d1b2e;--mute:#6b5668;--pink:#d12a73;--pinkl:#ffd3e6;--lav:#ebddf8;--line:#2d1b2e;--key:#fffdfb;--deep:#6a1b8a;--onp:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1220;--card:#2b1a2e;--ink:#fbeaf2;--mute:#d3b6c7;--pink:#ff7db4;--pinkl:#4a2438;--lav:#33233f;--line:#fbeaf2;--key:#f7e9f0;--deep:#d9a8ff;--onp:#1d1220}.keys a{color:#2d1b2e}}
+:root[data-theme="dark"]{--bg:#1d1220;--card:#2b1a2e;--ink:#fbeaf2;--mute:#d3b6c7;--pink:#ff7db4;--pinkl:#4a2438;--lav:#33233f;--line:#fbeaf2;--key:#f7e9f0;--deep:#d9a8ff;--onp:#1d1220}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "DM Sans",Georgia,sans-serif;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;pointer-events:none}
+body:before{width:520px;height:520px;left:-160px;top:15%;background:radial-gradient(circle,var(--pinkl),transparent 68%)}
+body:after{width:460px;height:460px;right:-140px;bottom:-60px;background:radial-gradient(circle,var(--lav),transparent 68%)}
+h1,h2,h3,.brand,.marq{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(3rem,11vw,6.2rem);letter-spacing:-.03em;background:linear-gradient(90deg,var(--ink),var(--pink),var(--deep),var(--ink));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.9rem,5vw,2.8rem)}h3{font-size:1.3rem}
+a{color:var(--pink);text-underline-offset:3px;font-weight:500}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:var(--card);padding:8px;z-index:9}
+header{background:var(--card);border-bottom:3px solid var(--ink);padding-top:10px;position:relative;z-index:2}
+.brand{display:flex;justify-content:space-between;align-items:center;font-size:1.3rem;margin:0;padding:4px 0}
+.brand a{color:var(--ink);text-decoration:none}
+.stage{position:relative;padding-top:48px}
+#cat{position:absolute;top:0;left:0;width:54px;height:42px;pointer-events:none;will-change:transform}
+.keys{display:flex;position:relative;overflow-x:auto;scrollbar-width:none;margin:0;padding:0;list-style:none}
+.keys li{flex:1 0 54px}
+.keys a{display:flex;height:76px;align-items:flex-end;justify-content:center;text-align:center;padding:0 2px 8px;font-size:.78rem;line-height:1.15;color:#2d1b2e;text-decoration:none;font-weight:500;background:var(--key);border:2px solid #2d1b2e;border-top:0;border-radius:0 0 10px 10px;margin-right:-2px;transition:transform .12s,background .2s}
+.keys a:hover{background:var(--pinkl);transform:translateY(3px)}.keys a:active{transform:translateY(7px)}
+.keys a[aria-current="page"]{background:var(--pinkl);font-weight:700;height:70px;box-shadow:inset 0 -7px 0 var(--pink)}
+.bk{position:absolute;top:0;width:8%;height:44px;background:#2d1b2e;border-radius:0 0 4px 4px;pointer-events:none}
+main{min-height:70vh}
+.page{display:none;padding:52px 0 40px}.page.on{display:block}
+.hero{display:grid;gap:32px;align-items:center;position:relative}
+@media(min-width:800px){.hero{grid-template-columns:1.3fr 1fr}}
+.sub{font-family:Fraunces,Georgia,serif;font-size:1.7rem;font-weight:600;color:var(--pink);margin:0 0 16px}
+.bars{display:flex;align-items:center;gap:5px;height:150px}
+.bars i{flex:1;height:var(--h);background:linear-gradient(var(--pink),var(--deep));border-radius:99px}
+.note{position:absolute;color:var(--pink);font-size:1.8rem;opacity:.55;pointer-events:none}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;min-height:48px;background:var(--card);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn.p{background:var(--pink);color:var(--onp)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}.btn:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--ink)}
+.sec{margin-top:60px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:22px;box-shadow:6px 6px 0 var(--pink);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--pink)}
+.card h3{margin-top:0}
+dl{margin:0}dt{font-weight:700;margin-top:12px;color:var(--pink)}dd{margin:0 0 4px}
+.tl{border-left:4px solid var(--pink);padding-left:22px;margin:0 0 36px}
+.eq{display:flex;gap:3px;align-items:flex-end;height:26px;margin-bottom:8px}.eq i{width:6px;background:var(--pink);border-radius:2px;height:40%}.eq i:nth-child(2){height:90%}.eq i:nth-child(3){height:60%}.eq i:nth-child(4){height:100%}.eq i:nth-child(5){height:50%}
+.marq{overflow:hidden;white-space:nowrap;margin-top:44px;border-block:3px solid var(--ink);padding:10px 0;font-size:1.3rem;background:var(--pinkl);margin-bottom:0}
+.marq div{display:inline-block}
+label{display:block;font-weight:700;margin-top:14px}
+input,textarea{width:100%;font:inherit;padding:12px;border:2px solid var(--ink);border-radius:10px;background:var(--card);color:var(--ink)}
+.err{color:#b3123f;font-size:.9rem;min-height:1.2em}@media(prefers-color-scheme:dark){.err{color:#ff9bb8}}
+#status{margin-top:12px;font-weight:700}
+footer{border-top:3px solid var(--ink);background:var(--card);padding:32px 0;margin-top:48px}
+footer nav a{margin-right:14px;display:inline-block;padding:6px 0}
+#top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));min-width:48px;min-height:48px;border-radius:50%;border:2px solid var(--ink);background:var(--pink);color:var(--onp);font-size:1.3rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+@media(prefers-reduced-motion:no-preference){
+html{scroll-behavior:smooth}
+h1{animation:sh 8s linear infinite}@keyframes sh{to{background-position:300% 0}}
+body:before{animation:dr 16s ease-in-out infinite alternate}body:after{animation:dr 20s ease-in-out infinite alternate-reverse}@keyframes dr{to{transform:translate(90px,-60px) scale(1.15)}}
+.bars i{animation:pu 1.2s ease-in-out infinite alternate;animation-delay:var(--d)}@keyframes pu{to{transform:scaleY(.2)}}
+.note{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-22px) rotate(12deg)}}
+.eq i{animation:pu 1s ease-in-out infinite alternate}.eq i:nth-child(even){animation-delay:.3s}
+.marq div{animation:sl 30s linear infinite}@keyframes sl{to{transform:translateX(-50%)}}
+#cat{animation:bob 1.8s ease-in-out infinite}@keyframes bob{50%{translate:0 -3px}}
+html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}html.js .rv.in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+ <div class="wrap">
+  <div class="brand"><a href="#home">Cadence Michael</a><a href="https://drive.google.com/file/d/1FY8Q4u8KS0G3XLmTwFL96PhkxoW7Pe8J/view?usp=sharing" rel="noopener" style="font-size:.9rem;font-weight:500">Resume</a></div>
+  <div class="stage">
+   <svg id="cat" viewBox="0 0 22 17" shape-rendering="crispEdges" role="img" aria-label="Pixel cat"><rect x="3" y="1" width="11" height="8" fill="#fff"/><rect x="5" y="9" width="7" height="1" fill="#fff"/><rect x="6" y="10" width="5" height="6" fill="#fff"/><rect x="11" y="11" width="1" height="5" fill="#fff"/><rect x="12" y="12" width="1" height="4" fill="#fff"/><rect x="13" y="13" width="1" height="3" fill="#fff"/><rect x="14" y="14" width="1" height="1" fill="#fff"/><rect x="15" y="13" width="2" height="2" fill="#fff"/><rect x="16" y="12" width="2" height="1" fill="#fff"/><rect x="17" y="11" width="4" height="1" fill="#fff"/><rect x="18" y="10" width="3" height="2" fill="#fff"/><rect x="3" y="1" width="2" height="2" fill="#ffb8cf"/><rect x="12" y="1" width="2" height="2" fill="#ffb8cf"/><rect x="3" y="0" width="3" height="1" fill="#1a1a1a"/><rect x="11" y="0" width="3" height="1" fill="#1a1a1a"/><rect x="6" y="1" width="5" height="1" fill="#1a1a1a"/><rect x="2" y="1" width="1" height="8" fill="#1a1a1a"/><rect x="14" y="1" width="1" height="8" fill="#1a1a1a"/><rect x="0" y="6" width="2" height="1" fill="#1a1a1a"/><rect x="0" y="8" width="2" height="1" fill="#1a1a1a"/><rect x="15" y="6" width="2" height="1" fill="#1a1a1a"/><rect x="15" y="8" width="2" height="1" fill="#1a1a1a"/><rect x="3" y="9" width="2" height="1" fill="#1a1a1a"/><rect x="12" y="9" width="2" height="1" fill="#1a1a1a"/><rect x="5" y="10" width="1" height="6" fill="#1a1a1a"/><rect x="11" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="16" width="8" height="1" fill="#1a1a1a"/><rect x="8" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="15" width="2" height="1" fill="#1a1a1a"/><rect x="12" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="13" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="18" y="9" width="3" height="1" fill="#1a1a1a"/><rect x="21" y="10" width="1" height="2" fill="#1a1a1a"/><rect x="18" y="12" width="3" height="1" fill="#1a1a1a"/><rect x="6" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="8" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="5" width="1" height="1" fill="#6cc4f5"/><rect x="10" y="5" width="1" height="1" fill="#6cc4f5"/></svg>
+   <nav aria-label="Main">
+    <ul class="keys" id="keys">
+     <li><a href="#home">Home</a></li><li><a href="#education">Education</a></li><li><a href="#projects">Projects</a></li><li><a href="#music">Music</a></li><li><a href="#interests">Other Interests</a></li><li><a href="#vision">Vision</a></li>
+    </ul>
+   </nav>
+  </div>
+ </div>
+</header>
+
+<main id="main" tabindex="-1"><div class="wrap">
+
+<section class="page" id="p-home" data-title="Cadence Michael | ECE & CS @ Duke">
+ <div class="hero">
+  <div>
+   <h1>Cadence Michael</h1>
+   <p class="sub">ECE &amp; CS @ Duke</p>
+   <div class="btns"><a class="btn p" href="#projects">Explore my projects</a><a class="btn" href="#music">Listen to my music</a><a class="btn" href="#contact" data-scroll>Get in touch</a></div>
+  </div>
+  <div class="bars" id="bars" aria-hidden="true"></div><span class="note" style="left:2%;top:-18px;animation-delay:0s" aria-hidden="true">♪</span><span class="note" style="left:55%;top:-26px;animation-delay:-2s" aria-hidden="true">♫</span><span class="note" style="right:3%;bottom:-24px;animation-delay:-4s" aria-hidden="true">♪</span>
+ </div>
+
+ <div class="marq" aria-hidden="true"><div>Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ Classical piano ✦ Music production ✦ ECE &amp; CS ✦ French ✦ Baking ✦ Hiking ✦ Cats ✦ </div></div>
+ <div class="sec"><h2>About me</h2>
+  <p style="max-width:62ch">I’m a first-year student at Duke University planning to study Electrical and Computer Engineering and Computer Science. I’m a classical pianist and music producer from Boulder, Colorado, and I like technology, baking, hiking, learning French, and cats. Thanks for checking out my website!</p>
+  <div class="btns" style="margin:12px 0"><a class="btn p" href="https://drive.google.com/file/d/1FY8Q4u8KS0G3XLmTwFL96PhkxoW7Pe8J/view?usp=sharing" rel="noopener">View resume</a><a class="btn" href="https://www.linkedin.com/in/cadence-michael/" rel="noopener">LinkedIn</a></div></div>
+
+ <div class="sec"><h2>Education</h2><div class="grid">
+  <div class="card"><h3>Duke University</h3><p>Intended: ECE and Computer Science<br>Expected graduation year: 2030</p></div>
+  <div class="card"><h3>Prior education</h3><p>Boulder High School, Boulder, Colorado</p></div></div>
+  <p><a href="#education">Full education details</a></p></div>
+
+ <div class="sec"><h2>Featured projects</h2><div class="grid" id="featured"></div><p><a href="#projects">See all projects</a></p></div>
+
+ <div class="sec"><h2>Music</h2><div class="card"><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p>I'm a classical pianist and music producer!</p><a href="#music">Go to Music</a></div></div>
+
+ <div class="sec" id="contact"><h2>Get in touch</h2>
+  <div class="card" style="max-width:600px">
+   <form id="f" novalidate>
+    <label for="n">Name</label><input id="n" name="name" autocomplete="name" required><div class="err" id="en"></div>
+    <label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required><div class="err" id="ee"></div>
+    <label for="m">Message</label><textarea id="m" name="message" rows="5" required></textarea><div class="err" id="em"></div>
+    <button class="btn p" type="submit" style="margin-top:12px;cursor:pointer;font:inherit;font-weight:600">Open email draft</button>
+    <div id="status" role="status"></div>
+   </form>
+   <p style="font-size:.9rem;color:var(--mute)">This page has no server, so the form opens a pre-filled draft in your email app. Prefer to write directly? <a href="mailto:cadence.michael@icloud.com">cadence.michael@icloud.com</a></p>
+  </div>
+ </div>
+</section>
+
+<section class="page" id="p-education" data-title="Education | Cadence Michael">
+ <h1>Education</h1>
+ <div class="tl"><h2>Duke University</h2><dl>
+  <dt>Major</dt><dd>Electrical and Computer Engineering and Computer Science (intended)</dd>
+  <dt>Expected graduation</dt><dd>2030</dd>
+  <dt>Relevant coursework</dt><dd>Chem 101, Comp Sci 201</dd>
+  <dt>Clubs, labs, and organizations</dt><dd>Catalyst Tech Society, Classical Piano</dd></dl></div>
+ <div class="tl"><h2>High school</h2><dl>
+  <dt>School</dt><dd>Boulder High School, Boulder, Colorado</dd>
+  <dt>Graduation year</dt><dd>2026</dd>
+  <dt>Academic highlights</dt><dd>DECA President of 200-member chapter, 5x DECA ICDC qualifier, National Merit Scholar, French National Honor Society President</dd>
+  <dt>Music study and performances</dt><dd>Currently studying piano with Ieva Jokubaviciute @ Duke | Previously studied music production at Interlochen Arts Camp</dd>
+  <dt>Service and community work</dt><dd>Volunteer @ Frasier Meadows Retirement Community, Cat Kennel Assistant @ Humane Society of Boulder Valley</dd></dl></div>
+</section>
+
+<section class="page" id="p-projects" data-title="Projects | Cadence Michael">
+ <h1>Projects</h1>
+ <p style="max-width:60ch">Some things I've done!</p>
+ <div class="grid" id="allproj"></div>
+</section>
+
+<section class="page" id="p-music" data-title="Music | Cadence Michael">
+ <h1>Music</h1>
+ <div class="grid">
+  <div class="card"><h2>Classical piano</h2>
+   <p><a class="btn p" href="https://youtu.be/zqcYew53OxY" rel="noopener">Watch a performance</a></p>
+   <h3>Repertoire</h3><p>Liebestraum no. 3 - Liszt<br>Rondo capriccioso - Mendelssohn</p>
+   <h3>Teachers</h3><p>Ieva Jokubaviciute @ Duke, Andrew Cooperstock @ CU Boulder</p></div>
+  <div class="card"><h2>Music production</h2>
+   <p><a class="btn p" href="https://open.spotify.com/track/7JY6pSC67TL2HpXmul5PHz?si=1adc3274f7ff43a2" rel="noopener">Listen on Spotify</a></p>
+   <h3>Skills</h3><dl><dt>DAWs</dt><dd>Logic Pro, FL Studio</dd><dt>Recording and editing</dt><dd>Songwriting, mixing</dd><dt>Instruments and hardware</dt><dd>Scarlett interface</dd><dt>Coding</dt><dd>Some Java &amp; Python</dd><dt>Production strengths</dt><dd>Combining live instruments with tech!</dd></dl></div>
+ </div>
+</section>
+
+<section class="page" id="p-interests" data-title="Other Interests | Cadence Michael">
+ <h1>Other Interests</h1>
+ <div class="grid">
+  <div class="card"><h3>French</h3><p>Seal of Biliteracy, French National Honor Society President</p></div>
+  <div class="card"><h3>Cats</h3><p>Cats are a big deal here. My cats, Clementine and Pascal, inspired me to volunteer at the Humane Society!</p></div>
+  <div class="card"><h3>Baking</h3><p>Lemon bars, carrot cake, chocolate chip cookies!</p></div>
+  <div class="card"><h3>Hiking and the outdoors</h3><p>I'm from Boulder, Colorado. Favorite spot: Chautauqua!</p></div>
+  <div class="card"><h3>Anything else</h3><p>I love geography games and trivia!</p></div>
+ </div>
+</section>
+
+<section class="page" id="p-vision" data-title="Vision | Cadence Michael">
+ <h1>Vision</h1>
+ <p style="max-width:62ch">I love exploring the intersection of art and technology!</p>
+ <h2>Questions I’m curious about</h2>
+ <ul><li>How can technology make music and sound more accessible?</li><li>How might engineering support people living with tinnitus?</li><li>What can musicians teach us about designing better audio tools?</li><li>How can art revolutionize tech?</li></ul>
+ <div class="card" style="margin-top:28px"><h3>Let’s connect</h3><p>If you’re into music, technology, research, or collaboration, I’d love to hear from you.</p><a class="btn p" href="#home" data-contact>Get in touch</a></div>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+ <p>Thanks for stopping by!</p>
+ <p><a href="https://www.linkedin.com/in/cadence-michael/" rel="noopener">LinkedIn</a> · <a href="mailto:cadence.michael@icloud.com">Email</a> · <a href="https://drive.google.com/file/d/1FY8Q4u8KS0G3XLmTwFL96PhkxoW7Pe8J/view?usp=sharing" rel="noopener">Resume</a></p>
+ <nav aria-label="Footer"><a href="#home">Home</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#music">Music</a><a href="#interests">Other Interests</a><a href="#vision">Vision</a></nav>
+</div></footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+const P=[
+ {t:"Silver Linings Project",c:"Community",d:"August 2024 – April 2025",s:"Silver Linings Project was an initiative to connect high schoolers with retirement home residents. We organized a holiday letter exchange, interviews, lunches, and a Spring Fling! The project took 4th statewide in DECA's Community Giving Project category.",m:"I founded, designed, and organized Silver Linings Project with two partners.",tl:"I used Instagram and Canva to facilitate and share Silver Linings Project.",o:"Over 100 members and high schoolers met face-to-face, and hundreds participated in a heartwarming letter exchange!",l:"https://drive.google.com/file/d/1-bEdWxgVQPUMb5hNn1CtmMOcT8ea5fgZ/view?usp=sharing",ll:"View write-up"},
+ {t:"Flatiron Foundation",c:"Career",d:"August 2025 – April 2026",s:"The Flatiron Foundation was all about preparing high schoolers for careers through hands-on engagement. We organized mock DECA competitions, brought university administrators, and mentored students one-on-one.",m:"I designed, facilitated, and organized the Flatiron Foundation alongside one partner.",tl:"We used Instagram, Canva, and Google Sheets to organize our events.",o:"Hundreds of students participated in mock competitions, connected face-to-face with university faculty, and were exposed to career opportunities!",l:"https://drive.google.com/file/d/1vakqQVcTqHcjQZR2EcpgiZ9bphkgTcdA/view?usp=sharing",ll:"View write-up"},
+ {t:"TinyTunes Piano",c:"Music / Tech",d:"January 2025",s:"I used Python and FL Studio to create an interactive piano interface.",m:"I single-handedly designed and coded the interface without the use of AI.",tl:"Python, FL Studio, CMU CS Academy",o:"A fun project that earned competitive acceptance to various music technology programs!",l:"https://academy.cs.cmu.edu/sharing/sandyBrownSpider2486",ll:"View project"}];
+const card=p=>`<article class="card"><h3>${p.t}</h3><p><strong>${p.c}</strong></p><dl><dt>Timeframe</dt><dd>${p.d}</dd><dt>Summary and goal</dt><dd>${p.s}</dd><dt>My contribution</dt><dd>${p.m}</dd><dt>Tools</dt><dd>${p.tl}</dd><dt>Outcome</dt><dd>${p.o}</dd></dl>${p.l?`<p><a href="${p.l}" rel="noopener">${p.ll}</a></p>`:""}</article>`;
+document.getElementById("allproj").innerHTML=P.map(card).join("");
+document.getElementById("featured").innerHTML=P.map(p=>`<article class="card"><h3>${p.t}</h3><p>${p.c}</p><a href="#projects">Details</a></article>`).join("");
+document.documentElement.classList.add("js");
+const bars=document.getElementById("bars");for(let i=0;i<26;i++){const e=document.createElement("i");e.style.setProperty("--h",(30+60*Math.abs(Math.sin(i*.55+1)))+"%");e.style.setProperty("--d",(-i*.11)+"s");bars.appendChild(e)}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll(".card,.tl,.sec>h2,.page>h1").forEach(e=>{e.classList.add("rv");io.observe(e)});
+const keys=[...document.querySelectorAll("#keys a")],cat=document.getElementById("cat"),box=document.querySelector(".stage");
+const bk=document.getElementById("keys");[16.6,33.3,66.6,83.3].forEach(x=>{const b=document.createElement("span");b.className="bk";b.style.left=`calc(${x}% - 4%)`;b.setAttribute("aria-hidden","true");bk.appendChild(b)});
+let cur=null;const rm=matchMedia("(prefers-reduced-motion:reduce)");
+function catX(a){const r=a.getBoundingClientRect(),s=box.getBoundingClientRect();return r.left-s.left+r.width/2-27}
+function route(){
+ let h=location.hash.slice(1);if(!document.getElementById("p-"+h)){if(h==="contact")h="home";else h="home"}
+ document.querySelectorAll(".page").forEach(s=>s.classList.toggle("on",s.id==="p-"+h));
+ const a=keys.find(k=>k.getAttribute("href")==="#"+h);
+ keys.forEach(k=>k===a?k.setAttribute("aria-current","page"):k.removeAttribute("aria-current"));
+ document.title=document.getElementById("p-"+h).dataset.title;
+ const x=catX(a);
+ if(cur!==null&&!rm.matches&&cat.animate){cat.animate([{transform:`translate(${cur}px,0)`},{transform:`translate(${(cur+x)/2}px,-26px)`},{transform:`translate(${x}px,0)`}],{duration:450,easing:"ease-out"})}
+ cat.style.transform=`translate(${x}px,0)`;cur=x;
+}
+addEventListener("hashchange",()=>{const c=location.hash==="#contact";route();if(c)document.getElementById("contact").scrollIntoView();else scrollTo(0,0)});
+addEventListener("resize",()=>{const a=keys.find(k=>k.hasAttribute("aria-current"));cur=catX(a);cat.style.transform=`translate(${cur}px,0)`});
+document.querySelector("[data-contact]").addEventListener("click",e=>{e.preventDefault();location.hash="#contact"});
+document.querySelector("[data-scroll]").addEventListener("click",e=>{e.preventDefault();if(location.hash!=="#home"&&location.hash!==""&&location.hash!=="#contact"){location.hash="#contact"}else{document.getElementById("contact").scrollIntoView();}});
+const f=document.getElementById("f"),st=document.getElementById("status");
+f.addEventListener("submit",e=>{e.preventDefault();
+ const v={n:f.n.value.trim(),e:f.e.value.trim(),m:f.m.value.trim()};let ok=true;
+ const set=(id,msg)=>{document.getElementById(id).textContent=msg;if(msg)ok=false};
+ set("en",v.n?"":"Enter your name.");
+ set("ee",/^\S+@\S+\.\S+$/.test(v.e)?"":"Enter a valid email address, like name@example.com.");
+ set("em",v.m?"":"Write a message.");
+ if(!ok){st.textContent="Fix the highlighted fields and try again.";return}
+ // To send without an email app, replace this with a fetch() to a form service endpoint (e.g. Formspree) and show success there.
+ location.href=`mailto:cadence.michael@icloud.com?subject=${encodeURIComponent("Website message from "+v.n)}&body=${encodeURIComponent(v.m+"\n\nReply to: "+v.e)}`;
+ st.textContent="Opening your email app. If nothing opens, email cadence.michael@icloud.com directly.";
+});
+document.getElementById("top").onclick=()=>scrollTo({top:0});
+route();if(location.hash==="#contact")setTimeout(()=>document.getElementById("contact").scrollIntoView(),0);
+</script>
+</body>
+</html>
